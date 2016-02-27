@@ -16,6 +16,7 @@ module Cordova.TypeScript.ShapeCalculator {
             document.addEventListener('resume', onResume, false);
 
             // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+
         }
 
         function onPause() {
@@ -29,6 +30,11 @@ module Cordova.TypeScript.ShapeCalculator {
     }
 
     window.onload = function () {
+        var calc = new AreaCalculator.Calculator();
+        calc.AddShape(new AreaCalculator.Circle(10));
+        calc.AddShape(new AreaCalculator.Square(20));
+        alert(calc.Area());
+
         Application.initialize();
     }
 }
